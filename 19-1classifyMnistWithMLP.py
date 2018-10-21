@@ -18,19 +18,19 @@ Y = tf.placeholder(tf.float32, [None, nb_classes])
 #W = tf.Variable(tf.random_normal([784, nb_classes]))
 #b = tf.Variable(tf.random_normal([nb_classes]))
 
-W1 = tf.Variable(tf.random_normal([784, 100]), name='weight1')
-b1 = tf.Variable(tf.random_normal([100]), name='bias1')
+W1 = tf.Variable(tf.random_normal([784, 10]), name='weight1')
+b1 = tf.Variable(tf.random_normal([10]), name='bias1')
 layer1 = tf.sigmoid(tf.matmul(X, W1) + b1)
 
-W2 = tf.Variable(tf.random_normal([100, 100]), name='weight2')
-b2 = tf.Variable(tf.random_normal([100]), name='bias2')
+W2 = tf.Variable(tf.random_normal([10, 10]), name='weight2')
+b2 = tf.Variable(tf.random_normal([10]), name='bias2')
 layer2 = tf.sigmoid(tf.matmul(layer1, W2) + b2)
 
-W3 = tf.Variable(tf.random_normal([100, 100]), name='weight3')
-b3 = tf.Variable(tf.random_normal([100]), name='bias3')
+W3 = tf.Variable(tf.random_normal([10, 10]), name='weight3')
+b3 = tf.Variable(tf.random_normal([10]), name='bias3')
 layer3 = tf.sigmoid(tf.matmul(layer2, W3) + b3)
 
-W4 = tf.Variable(tf.random_normal([100, nb_classes]), name='weight4')
+W4 = tf.Variable(tf.random_normal([10, nb_classes]), name='weight4')
 b4 = tf.Variable(tf.random_normal([nb_classes]), name='bias4')
 
 # Hypothesis (using softmax)
